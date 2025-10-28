@@ -1,0 +1,189 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "segmentsMDecenas[0]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsMDecenas[1]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsMDecenas[2]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsMDecenas[3]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsMDecenas[4]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsMDecenas[5]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsMDecenas[6]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsMUnidades[0]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsMUnidades[1]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsMUnidades[2]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsMUnidades[3]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsMUnidades[4]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsMUnidades[5]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsMUnidades[6]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsSDecenas[0]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsSDecenas[1]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsSDecenas[2]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsSDecenas[3]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsSDecenas[4]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsSDecenas[5]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsSDecenas[6]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsSUnidades[0]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsSUnidades[1]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsSUnidades[2]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsSUnidades[3]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsSUnidades[4]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsSUnidades[5]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsSUnidades[6]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsCDecenas[0]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsCDecenas[1]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsCDecenas[2]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsCDecenas[3]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsCDecenas[4]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsCDecenas[5]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsCDecenas[6]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsCUnidades[0]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsCUnidades[1]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsCUnidades[2]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsCUnidades[3]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsCUnidades[4]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsCUnidades[5]",
+					"strict" : false
+				},
+				{
+					"name" : "segmentsCUnidades[6]",
+					"strict" : false
+				},
+				{
+					"name" : "clk50mhz",
+					"strict" : false
+				},
+				{
+					"name" : "btn2Reset",
+					"strict" : false
+				},
+				{
+					"name" : "btn1StartPause",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

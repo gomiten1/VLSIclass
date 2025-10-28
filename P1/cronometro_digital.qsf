@@ -1,0 +1,113 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2025  Altera Corporation. All rights reserved.
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, the Altera Quartus Prime License Agreement,
+# the Altera IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Altera and sold by Altera or its authorized distributors.  Please
+# refer to the Altera Software License Subscription Agreements 
+# on the Quartus Prime software download page.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+# Date created = 13:58:30  October 16, 2025
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		cronometro_digital_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Intel recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "MAX 10"
+set_global_assignment -name DEVICE 10M50DAF484C7G
+set_global_assignment -name TOP_LEVEL_ENTITY cronometro_digital
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 24.1STD.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:58:30  OCTOBER 16, 2025"
+set_global_assignment -name LAST_QUARTUS_VERSION "24.1std.0 Lite Edition"
+set_global_assignment -name SOURCE_FILE cronometro_digital
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name EDA_SIMULATION_TOOL "Questa Intel FPGA (VHDL)"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_timing
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
+set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
+set_global_assignment -name VHDL_FILE decoder_7seg.vhd
+set_global_assignment -name VHDL_FILE display_mux.vhd
+set_global_assignment -name VHDL_FILE counter_bcd.vhd
+set_global_assignment -name VHDL_FILE fsm_control.vhd
+set_global_assignment -name VHDL_FILE clk_divider.vhd
+set_global_assignment -name VHDL_FILE cronometro_digital.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_location_assignment PIN_P11 -to clk50mhz
+set_location_assignment PIN_A7 -to btn1StartPause
+set_location_assignment PIN_B8 -to btn2Reset
+set_location_assignment PIN_C14 -to segmentsCUnidades[0]
+set_location_assignment PIN_E15 -to segmentsCUnidades[1]
+set_location_assignment PIN_C15 -to segmentsCUnidades[2]
+set_location_assignment PIN_C16 -to segmentsCUnidades[3]
+set_location_assignment PIN_E16 -to segmentsCUnidades[4]
+set_location_assignment PIN_D17 -to segmentsCUnidades[5]
+set_location_assignment PIN_C17 -to segmentsCUnidades[6]
+set_location_assignment PIN_C18 -to segmentsCDecenas[0]
+set_location_assignment PIN_D18 -to segmentsCDecenas[1]
+set_location_assignment PIN_E18 -to segmentsCDecenas[2]
+set_location_assignment PIN_B16 -to segmentsCDecenas[3]
+set_location_assignment PIN_A17 -to segmentsCDecenas[4]
+set_location_assignment PIN_A18 -to segmentsCDecenas[5]
+set_location_assignment PIN_B17 -to segmentsCDecenas[6]
+set_location_assignment PIN_B20 -to segmentsSUnidades[0]
+set_location_assignment PIN_A20 -to segmentsSUnidades[1]
+set_location_assignment PIN_B19 -to segmentsSUnidades[2]
+set_location_assignment PIN_A21 -to segmentsSUnidades[3]
+set_location_assignment PIN_B21 -to segmentsSUnidades[4]
+set_location_assignment PIN_C22 -to segmentsSUnidades[5]
+set_location_assignment PIN_B22 -to segmentsSUnidades[6]
+set_location_assignment PIN_F21 -to segmentsSDecenas[0]
+set_location_assignment PIN_E22 -to segmentsSDecenas[1]
+set_location_assignment PIN_E21 -to segmentsSDecenas[2]
+set_location_assignment PIN_C19 -to segmentsSDecenas[3]
+set_location_assignment PIN_C20 -to segmentsSDecenas[4]
+set_location_assignment PIN_D19 -to segmentsSDecenas[5]
+set_location_assignment PIN_E17 -to segmentsSDecenas[6]
+set_location_assignment PIN_F18 -to segmentsMUnidades[0]
+set_location_assignment PIN_E20 -to segmentsMUnidades[1]
+set_location_assignment PIN_E19 -to segmentsMUnidades[2]
+set_location_assignment PIN_J18 -to segmentsMUnidades[3]
+set_location_assignment PIN_H19 -to segmentsMUnidades[4]
+set_location_assignment PIN_F19 -to segmentsMUnidades[5]
+set_location_assignment PIN_F20 -to segmentsMUnidades[6]
+set_location_assignment PIN_J20 -to segmentsMDecenas[0]
+set_location_assignment PIN_K20 -to segmentsMDecenas[1]
+set_location_assignment PIN_L18 -to segmentsMDecenas[2]
+set_location_assignment PIN_N18 -to segmentsMDecenas[3]
+set_location_assignment PIN_M20 -to segmentsMDecenas[4]
+set_location_assignment PIN_N19 -to segmentsMDecenas[5]
+set_location_assignment PIN_N20 -to segmentsMDecenas[6]
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
