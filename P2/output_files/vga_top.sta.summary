@@ -1,0 +1,77 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'vga_sync:U1_VGA_SYNC|s_clk_25mhz'
+Slack : -1.805
+TNS   : -27.520
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -0.778
+TNS   : -0.778
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.597
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'vga_sync:U1_VGA_SYNC|s_clk_25mhz'
+Slack : 0.639
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -4.403
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'vga_sync:U1_VGA_SYNC|s_clk_25mhz'
+Slack : -1.403
+TNS   : -28.060
+
+Type  : Slow 1200mV 0C Model Setup 'vga_sync:U1_VGA_SYNC|s_clk_25mhz'
+Slack : -1.537
+TNS   : -23.421
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -0.597
+TNS   : -0.597
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.457
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'vga_sync:U1_VGA_SYNC|s_clk_25mhz'
+Slack : 0.592
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -4.403
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'vga_sync:U1_VGA_SYNC|s_clk_25mhz'
+Slack : -1.403
+TNS   : -28.060
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -0.195
+TNS   : -0.195
+
+Type  : Fast 1200mV 0C Model Setup 'vga_sync:U1_VGA_SYNC|s_clk_25mhz'
+Slack : -0.155
+TNS   : -1.429
+
+Type  : Fast 1200mV 0C Model Hold 'vga_sync:U1_VGA_SYNC|s_clk_25mhz'
+Slack : 0.247
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -3.000
+TNS   : -4.081
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'vga_sync:U1_VGA_SYNC|s_clk_25mhz'
+Slack : -1.000
+TNS   : -20.000
+
+------------------------------------------------------------

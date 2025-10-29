@@ -3,25 +3,19 @@ use ieee.std_logic_1164.all;
 
 entity vga_top is
     port (
-        -- Reloj y Reset
-        CLOCK_50 : in  std_logic; -- Pin N14 (Reloj 50 MHz)
-        KEY      : in  std_logic_vector(0 downto 0); -- Pin U7 (KEY0 como reset)
-        
-        -- Switches (usaremos 5 de los 10)
+        CLOCK_50 : in  std_logic;
+        KEY      : in  std_logic_vector(0 downto 0);
         SW       : in  std_logic_vector(9 downto 0);
-        
-        -- Salidas VGA
-        VGA_HS   : out std_logic; -- Pin L7 (HSYNC)
-        VGA_VS   : out std_logic; -- Pin K7 (VSYNC)
-        VGA_R    : out std_logic_vector(3 downto 0); -- Pines M8, M7, L8, K8
-        VGA_G    : out std_logic_vector(3 downto 0); -- Pines J8, H8, J7, H7
-        VGA_B    : out std_logic_vector(3 downto 0)  -- Pines G8, G7, F8, F7
+        VGA_HS   : out std_logic;
+        VGA_VS   : out std_logic;
+        VGA_R    : out std_logic_vector(3 downto 0);
+        VGA_G    : out std_logic_vector(3 downto 0);
+        VGA_B    : out std_logic_vector(3 downto 0)
     );
 end entity vga_top;
 
 architecture structural of vga_top is
 
-    -- Declaracion del Componente 1 (Sincronizador)
     component vga_sync is
         port (
             i_clk_50mhz : in  std_logic;
@@ -34,7 +28,6 @@ architecture structural of vga_top is
         );
     end component vga_sync;
 
-    -- Declaracion del Componente 2 (Generador de Video)
     component video_gen is
         port (
             i_enable    : in std_logic;
@@ -51,7 +44,6 @@ architecture structural of vga_top is
         );
     end component video_gen;
 
-    -- Señales internas ("cables") para conectar los modulos
     signal s_rst_n     : std_logic;
     signal s_enable    : std_logic;
     signal s_pos_x     : std_logic_vector(9 downto 0);
@@ -59,10 +51,8 @@ architecture structural of vga_top is
 
 begin
 
-    -- El KEY0 es activo en bajo, perfecto para nuestro reset
     s_rst_n <= KEY(0);
 
-    -- Instancia del Sincronizador
     U1_VGA_SYNC : component vga_sync
         port map (
             i_clk_50mhz => CLOCK_50,
@@ -74,20 +64,16 @@ begin
             o_pos_y     => s_pos_y
         );
         
-    -- Instancia del Generador de Video
     U2_VIDEO_GEN : component video_gen
         port map (
             i_enable    => s_enable,
             i_pos_x     => s_pos_x,
             i_pos_y     => s_pos_y,
-            
-            -- Asignamos los primeros 5 switches a los modos
-            i_srec      => SW(4), -- Le damos la prioridad mas alta a srec
+            i_srec      => SW(4), 
             i_sc        => SW(3),
             i_sr        => SW(2),
             i_sg        => SW(1),
             i_sb        => SW(0),
-            
             o_vga_r     => VGA_R,
             o_vga_g     => VGA_G,
             o_vga_b     => VGA_B

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vga_top
-Tue Oct 28 10:55:39 2025
+Wed Oct 29 13:03:33 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -10,7 +10,13 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -37,22 +43,22 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Tue Oct 28 10:55:39 2025               ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct 29 13:03:33 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; vga_top                                         ;
 ; Top-level Entity Name              ; vga_top                                         ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
-; UFM blocks                         ; N/A until Partition Merge                       ;
-; ADC blocks                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 53                                              ;
+;     Total combinational functions  ; 53                                              ;
+;     Dedicated logic registers      ; 21                                              ;
+; Total registers                    ; 21                                              ;
+; Total pins                         ; 26                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
+; UFM blocks                         ; 0                                               ;
+; ADC blocks                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -151,11 +157,115 @@ on the Quartus Prime software download page.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                              ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                       ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
+; vga_sync.vhd                     ; yes             ; User VHDL File  ; /home/gomiten/Documents/VLSIclass/P2/vga_sync.vhd  ;         ;
+; video_gen.vhd                    ; yes             ; User VHDL File  ; /home/gomiten/Documents/VLSIclass/P2/video_gen.vhd ;         ;
+; vga_top.vhd                      ; yes             ; User VHDL File  ; /home/gomiten/Documents/VLSIclass/P2/vga_top.vhd   ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                    ;
++---------------------------------------------+----------------------------------+
+; Resource                                    ; Usage                            ;
++---------------------------------------------+----------------------------------+
+; Estimated Total logic elements              ; 53                               ;
+;                                             ;                                  ;
+; Total combinational functions               ; 53                               ;
+; Logic element usage by number of LUT inputs ;                                  ;
+;     -- 4 input functions                    ; 20                               ;
+;     -- 3 input functions                    ; 4                                ;
+;     -- <=2 input functions                  ; 29                               ;
+;                                             ;                                  ;
+; Logic elements by mode                      ;                                  ;
+;     -- normal mode                          ; 35                               ;
+;     -- arithmetic mode                      ; 18                               ;
+;                                             ;                                  ;
+; Total registers                             ; 21                               ;
+;     -- Dedicated logic registers            ; 21                               ;
+;     -- I/O registers                        ; 0                                ;
+;                                             ;                                  ;
+; I/O pins                                    ; 26                               ;
+;                                             ;                                  ;
+; Embedded Multiplier 9-bit elements          ; 0                                ;
+;                                             ;                                  ;
+; Maximum fan-out node                        ; vga_sync:U1_VGA_SYNC|s_clk_25mhz ;
+; Maximum fan-out                             ; 21                               ;
+; Total fan-out                               ; 260                              ;
+; Average fan-out                             ; 2.06                             ;
++---------------------------------------------+----------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                             ;
++-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------+-------------+--------------+
+; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name             ; Entity Name ; Library Name ;
++-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------+-------------+--------------+
+; |vga_top                    ; 53 (0)              ; 21 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 26   ; 0            ; 0          ; |vga_top                        ; vga_top     ; work         ;
+;    |vga_sync:U1_VGA_SYNC|   ; 41 (41)             ; 21 (21)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga_top|vga_sync:U1_VGA_SYNC   ; vga_sync    ; work         ;
+;    |video_gen:U2_VIDEO_GEN| ; 12 (12)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |vga_top|video_gen:U2_VIDEO_GEN ; video_gen   ; work         ;
++-----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 21    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 21    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 26                          ;
+; cycloneiii_ff         ; 21                          ;
+;     CLR               ; 11                          ;
+;     ENA CLR           ; 10                          ;
+; cycloneiii_lcell_comb ; 53                          ;
+;     arith             ; 18                          ;
+;         2 data inputs ; 18                          ;
+;     normal            ; 35                          ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 20                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.80                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -164,25 +274,42 @@ on the Quartus Prime software download page.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Tue Oct 28 10:55:30 2025
+    Info: Processing started: Wed Oct 29 13:03:23 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga_top -c vga_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file vga_sync.vhd
-    Info (12022): Found design unit 1: vga_sync-rtl File: /home/sebas/Documents/fpga/P2/vga_sync.vhd Line: 21
-    Info (12023): Found entity 1: vga_sync File: /home/sebas/Documents/fpga/P2/vga_sync.vhd Line: 5
+    Info (12022): Found design unit 1: vga_sync-rtl File: /home/gomiten/Documents/VLSIclass/P2/vga_sync.vhd Line: 17
+    Info (12023): Found entity 1: vga_sync File: /home/gomiten/Documents/VLSIclass/P2/vga_sync.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file video_gen.vhd
-    Info (12022): Found design unit 1: video_gen-rtl File: /home/sebas/Documents/fpga/P2/video_gen.vhd Line: 26
-    Info (12023): Found entity 1: video_gen File: /home/sebas/Documents/fpga/P2/video_gen.vhd Line: 5
+    Info (12022): Found design unit 1: video_gen-rtl File: /home/gomiten/Documents/VLSIclass/P2/video_gen.vhd Line: 21
+    Info (12023): Found entity 1: video_gen File: /home/gomiten/Documents/VLSIclass/P2/video_gen.vhd Line: 5
 Warning (12019): Can't analyze file -- file top_vga.vhd is missing
 Info (12021): Found 2 design units, including 1 entities, in source file vga_top.vhd
-    Info (12022): Found design unit 1: vga_top-structural File: /home/sebas/Documents/fpga/P2/vga_top.vhd Line: 22
-    Info (12023): Found entity 1: vga_top File: /home/sebas/Documents/fpga/P2/vga_top.vhd Line: 4
-Error (10887): VHDL error at video_gen.vhd(115): simplified sensitivity list is not supported in VHDL_1993, and is only supported for VHDL 2008 File: /home/sebas/Documents/fpga/P2/video_gen.vhd Line: 115
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 2 warnings
-    Error: Peak virtual memory: 399 megabytes
-    Error: Processing ended: Tue Oct 28 10:55:40 2025
-    Error: Elapsed time: 00:00:10
-    Error: Total CPU time (on all processors): 00:00:20
+    Info (12022): Found design unit 1: vga_top-structural File: /home/gomiten/Documents/VLSIclass/P2/vga_top.vhd Line: 17
+    Info (12023): Found entity 1: vga_top File: /home/gomiten/Documents/VLSIclass/P2/vga_top.vhd Line: 4
+Info (12127): Elaborating entity "vga_top" for the top level hierarchy
+Info (12128): Elaborating entity "vga_sync" for hierarchy "vga_sync:U1_VGA_SYNC" File: /home/gomiten/Documents/VLSIclass/P2/vga_top.vhd Line: 56
+Info (12128): Elaborating entity "video_gen" for hierarchy "video_gen:U2_VIDEO_GEN" File: /home/gomiten/Documents/VLSIclass/P2/vga_top.vhd Line: 67
+Warning (10492): VHDL Process Statement warning at video_gen.vhd(55): signal "s_pos_x_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gomiten/Documents/VLSIclass/P2/video_gen.vhd Line: 55
+Warning (10492): VHDL Process Statement warning at video_gen.vhd(56): signal "s_pos_y_int" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/gomiten/Documents/VLSIclass/P2/video_gen.vhd Line: 56
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 5 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/gomiten/Documents/VLSIclass/P2/vga_top.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[6]" File: /home/gomiten/Documents/VLSIclass/P2/vga_top.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/gomiten/Documents/VLSIclass/P2/vga_top.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[8]" File: /home/gomiten/Documents/VLSIclass/P2/vga_top.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[9]" File: /home/gomiten/Documents/VLSIclass/P2/vga_top.vhd Line: 8
+Info (21057): Implemented 79 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 53 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 436 megabytes
+    Info: Processing ended: Wed Oct 29 13:03:33 2025
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:22
 
 
