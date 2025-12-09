@@ -17,7 +17,7 @@
 -- PROGRAM "Quartus Prime"
 -- VERSION "Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition"
 
--- DATE "11/04/2025 09:48:25"
+-- DATE "11/05/2025 12:10:06"
 
 -- 
 -- Device: Altera 10M50DAF484C7G Package FBGA484
@@ -92,11 +92,11 @@ ENTITY 	vga_top IS
     PORT (
 	CLOCK_50 : IN std_logic;
 	KEY : IN std_logic_vector(0 DOWNTO 0);
-	VGA_HS : BUFFER std_logic;
-	VGA_VS : BUFFER std_logic;
-	VGA_R : BUFFER std_logic_vector(3 DOWNTO 0);
-	VGA_G : BUFFER std_logic_vector(3 DOWNTO 0);
-	VGA_B : BUFFER std_logic_vector(3 DOWNTO 0)
+	VGA_HS : OUT std_logic;
+	VGA_VS : OUT std_logic;
+	VGA_R : OUT std_logic_vector(3 DOWNTO 0);
+	VGA_G : OUT std_logic_vector(3 DOWNTO 0);
+	VGA_B : OUT std_logic_vector(3 DOWNTO 0)
 	);
 END vga_top;
 

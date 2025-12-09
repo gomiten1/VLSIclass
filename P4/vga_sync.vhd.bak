@@ -1,0 +1,99 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity vga_sync is
+    port (
+        i_clk_25mhz : in  std_logic;
+        i_rst_n     : in  std_logic;
+        o_hsync     : out std_logic;
+        o_vsync     : out std_logic;
+        o_enable    : out std_logic;
+        o_pos_x     : out std_logic_vector(9 downto 0);
+        o_pos_y     : out std_logic_vector(9 downto 0);
+        o_vsync_pulse : out std_logic
+    );
+end entity vga_sync;
+
+architecture rtl of vga_sync is
+    -- Constantes para 640x480 @ 60Hz
+    constant H_VISIBLE_AREA : integer := 640;
+    constant H_FRONT_PORCH  : integer := 16;
+    constant H_SYNC_PULSE   : integer := 96;
+    constant H_BACK_PORCH   : integer := 48;
+    constant H_TOTAL : integer := H_VISIBLE_AREA + H_FRONT_PORCH + H_SYNC_PULSE + H_BACK_PORCH; -- 800
+
+    constant V_VISIBLE_AREA : integer := 480;
+    constant V_FRONT_PORCH  : integer := 10;
+    constant V_SYNC_PULSE   : integer := 2;
+    constant V_BACK_PORCH   : integer := 33;
+    constant V_TOTAL : integer := V_VISIBLE_AREA + V_FRONT_PORCH + V_SYNC_PULSE + V_BACK_PORCH; -- 525
+
+    signal s_h_count : unsigned(9 downto 0) := (others => '0');
+    signal s_v_count : unsigned(9 downto 0) := (others => '0');
+    signal s_enable : std_logic := '0';
+    signal s_vsync_prev : std_logic := '1';
+    
+    signal s_vsync : std_logic; --- CORRECCIÓN: Señal interna para VSync
+
+begin
+
+    process(i_clk_25mhz, i_rst_n)
+    begin
+        if (i_rst_n = '0') then
+            s_h_count <= (others => '0');
+            s_v_count <= (others => '0');
+        elsif rising_edge(i_clk_25mhz) then
+            if (s_h_count = H_TOTAL - 1) then
+                s_h_count <= (others => '0');
+                if (s_v_count = V_TOTAL - 1) then
+                    s_v_count <= (others => '0');
+                else
+                    s_v_count <= s_v_count + 1;
+                end if;
+            else
+                s_h_count <= s_h_count + 1;
+            end if;
+        end if;
+    end process;
+
+    o_hsync <= '0' when (s_h_count >= H_VISIBLE_AREA + H_FRONT_PORCH) and
+                       (s_h_count < H_VISIBLE_AREA + H_FRONT_PORCH + H_SYNC_PULSE)
+             else '1';
+
+    --- CORRECCIÓN: Toda la lógica ahora escribe en la señal interna 's_vsync'
+    s_vsync <= '0' when (s_v_count >= V_VISIBLE_AREA + V_FRONT_PORCH) and
+                       (s_v_count < V_VISIBLE_AREA + V_FRONT_PORCH + V_SYNC_PULSE)
+             else '1';
+
+    s_enable <= '1' when (s_h_count < H_VISIBLE_AREA) and (s_v_count < V_VISIBLE_AREA)
+              else '0';
+
+    o_enable <= s_enable;
+    
+    -- Pulso de VSync (útil para el histograma)
+    process(i_clk_25mhz, i_rst_n)
+    begin
+        if (i_rst_n = '0') then
+            s_vsync_prev <= '1';
+            o_vsync_pulse <= '0';
+        elsif rising_edge(i_clk_25mhz) then
+            --- CORRECCIÓN: Ahora leemos de la señal interna 's_vsync'
+            if s_vsync = '0' and s_vsync_prev = '1' then
+                 o_vsync_pulse <= '1';
+            else
+                 o_vsync_pulse <= '0';
+            end if;
+            
+            --- CORRECCIÓN: Y guardamos el valor de 's_vsync'
+            s_vsync_prev <= s_vsync;
+        end if;
+    end process;
+
+    o_pos_x <= std_logic_vector(s_h_count);
+    o_pos_y <= std_logic_vector(s_v_count);
+
+    --- CORRECCIÓN: Asignación final del puerto de salida
+    o_vsync <= s_vsync;
+
+end architecture rtl;

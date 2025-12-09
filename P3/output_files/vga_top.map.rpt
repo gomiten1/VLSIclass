@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vga_top
-Tue Nov  4 09:47:54 2025
+Wed Nov  5 12:09:49 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -56,7 +56,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov  4 09:47:54 2025           ;
+; Analysis & Synthesis Status        ; Successful - Wed Nov  5 12:09:49 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; vga_top                                         ;
 ; Top-level Entity Name              ; vga_top                                         ;
@@ -178,31 +178,31 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                           ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                             ; Library ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------+---------+
-; vga_sync.vhd                     ; yes             ; User VHDL File                         ; /home/sebas/Documents/VLSIclass/P3/vga_sync.vhd                                          ;         ;
-; control.vhd                      ; yes             ; User VHDL File                         ; /home/sebas/Documents/VLSIclass/P3/control.vhd                                           ;         ;
-; pixel_gen.vhd                    ; yes             ; User VHDL File                         ; /home/sebas/Documents/VLSIclass/P3/pixel_gen.vhd                                         ;         ;
-; vga_top.vhd                      ; yes             ; User VHDL File                         ; /home/sebas/Documents/VLSIclass/P3/vga_top.vhd                                           ;         ;
-; sine_rom_640x9.vhd               ; yes             ; User Wizard-Generated File             ; /home/sebas/Documents/VLSIclass/P3/sine_rom_640x9.vhd                                    ;         ;
-; sincos_rom_256x9.vhd             ; yes             ; User Wizard-Generated File             ; /home/sebas/Documents/VLSIclass/P3/sincos_rom_256x9.vhd                                  ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                           ; /home/sebas/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                           ; /home/sebas/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                           ; /home/sebas/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                           ; /home/sebas/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal241.inc                   ; yes             ; Megafunction                           ; /home/sebas/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/aglobal241.inc        ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                           ; /home/sebas/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                       ; yes             ; Megafunction                           ; /home/sebas/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                       ; yes             ; Megafunction                           ; /home/sebas/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                           ; /home/sebas/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_utq3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/sebas/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf                                ;         ;
-; sine_wave.mif                    ; yes             ; Auto-Found Memory Initialization File  ; /home/sebas/Documents/VLSIclass/P3/sine_wave.mif                                         ;         ;
-; db/altsyncram_b2r3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf                                ;         ;
-; sincos_wave.mif                  ; yes             ; Auto-Found Memory Initialization File  ; /home/sebas/Documents/VLSIclass/P3/sincos_wave.mif                                       ;         ;
-+----------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                             ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                               ; Library ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------+---------+
+; vga_sync.vhd                     ; yes             ; User VHDL File                         ; /home/gomiten/Documents/VLSIclass/P3/vga_sync.vhd                                          ;         ;
+; control.vhd                      ; yes             ; User VHDL File                         ; /home/gomiten/Documents/VLSIclass/P3/control.vhd                                           ;         ;
+; pixel_gen.vhd                    ; yes             ; User VHDL File                         ; /home/gomiten/Documents/VLSIclass/P3/pixel_gen.vhd                                         ;         ;
+; vga_top.vhd                      ; yes             ; User VHDL File                         ; /home/gomiten/Documents/VLSIclass/P3/vga_top.vhd                                           ;         ;
+; sine_rom_640x9.vhd               ; yes             ; User Wizard-Generated File             ; /home/gomiten/Documents/VLSIclass/P3/sine_rom_640x9.vhd                                    ;         ;
+; sincos_rom_256x9.vhd             ; yes             ; User Wizard-Generated File             ; /home/gomiten/Documents/VLSIclass/P3/sincos_rom_256x9.vhd                                  ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                           ; /home/gomiten/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                           ; /home/gomiten/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                           ; /home/gomiten/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                           ; /home/gomiten/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal241.inc                   ; yes             ; Megafunction                           ; /home/gomiten/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/aglobal241.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                           ; /home/gomiten/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                           ; /home/gomiten/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                           ; /home/gomiten/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                           ; /home/gomiten/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_utq3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf                                ;         ;
+; sine_wave.mif                    ; yes             ; Auto-Found Memory Initialization File  ; /home/gomiten/Documents/VLSIclass/P3/sine_wave.mif                                         ;         ;
+; db/altsyncram_b2r3.tdf           ; yes             ; Auto-Generated Megafunction            ; /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf                                ;         ;
+; sincos_wave.mif                  ; yes             ; Auto-Found Memory Initialization File  ; /home/gomiten/Documents/VLSIclass/P3/sincos_wave.mif                                       ;         ;
++----------------------------------+-----------------+----------------------------------------+--------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------------------------+
@@ -633,7 +633,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -643,36 +643,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Tue Nov  4 09:47:43 2025
+    Info: Processing started: Wed Nov  5 12:09:40 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vga_top -c vga_top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file vga_sync.vhd
-    Info (12022): Found design unit 1: vga_sync-rtl File: /home/sebas/Documents/VLSIclass/P3/vga_sync.vhd Line: 17
-    Info (12023): Found entity 1: vga_sync File: /home/sebas/Documents/VLSIclass/P3/vga_sync.vhd Line: 5
+    Info (12022): Found design unit 1: vga_sync-rtl File: /home/gomiten/Documents/VLSIclass/P3/vga_sync.vhd Line: 17
+    Info (12023): Found entity 1: vga_sync File: /home/gomiten/Documents/VLSIclass/P3/vga_sync.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file control.vhd
-    Info (12022): Found design unit 1: control-rtl File: /home/sebas/Documents/VLSIclass/P3/control.vhd Line: 15
-    Info (12023): Found entity 1: control File: /home/sebas/Documents/VLSIclass/P3/control.vhd Line: 5
+    Info (12022): Found design unit 1: control-rtl File: /home/gomiten/Documents/VLSIclass/P3/control.vhd Line: 14
+    Info (12023): Found entity 1: control File: /home/gomiten/Documents/VLSIclass/P3/control.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file pixel_gen.vhd
-    Info (12022): Found design unit 1: pixel_gen-rtl File: /home/sebas/Documents/VLSIclass/P3/pixel_gen.vhd Line: 35
-    Info (12023): Found entity 1: pixel_gen File: /home/sebas/Documents/VLSIclass/P3/pixel_gen.vhd Line: 5
+    Info (12022): Found design unit 1: pixel_gen-rtl File: /home/gomiten/Documents/VLSIclass/P3/pixel_gen.vhd Line: 27
+    Info (12023): Found entity 1: pixel_gen File: /home/gomiten/Documents/VLSIclass/P3/pixel_gen.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file vga_top.vhd
-    Info (12022): Found design unit 1: vga_top-structural File: /home/sebas/Documents/VLSIclass/P3/vga_top.vhd Line: 28
-    Info (12023): Found entity 1: vga_top File: /home/sebas/Documents/VLSIclass/P3/vga_top.vhd Line: 4
+    Info (12022): Found design unit 1: vga_top-structural File: /home/gomiten/Documents/VLSIclass/P3/vga_top.vhd Line: 24
+    Info (12023): Found entity 1: vga_top File: /home/gomiten/Documents/VLSIclass/P3/vga_top.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file sine_rom_640x9.vhd
-    Info (12022): Found design unit 1: sine_rom_640x9-SYN File: /home/sebas/Documents/VLSIclass/P3/sine_rom_640x9.vhd Line: 53
-    Info (12023): Found entity 1: sine_rom_640x9 File: /home/sebas/Documents/VLSIclass/P3/sine_rom_640x9.vhd Line: 43
+    Info (12022): Found design unit 1: sine_rom_640x9-SYN File: /home/gomiten/Documents/VLSIclass/P3/sine_rom_640x9.vhd Line: 53
+    Info (12023): Found entity 1: sine_rom_640x9 File: /home/gomiten/Documents/VLSIclass/P3/sine_rom_640x9.vhd Line: 43
 Info (12021): Found 2 design units, including 1 entities, in source file sincos_rom_256x9.vhd
-    Info (12022): Found design unit 1: sincos_rom_256x9-SYN File: /home/sebas/Documents/VLSIclass/P3/sincos_rom_256x9.vhd Line: 53
-    Info (12023): Found entity 1: sincos_rom_256x9 File: /home/sebas/Documents/VLSIclass/P3/sincos_rom_256x9.vhd Line: 43
+    Info (12022): Found design unit 1: sincos_rom_256x9-SYN File: /home/gomiten/Documents/VLSIclass/P3/sincos_rom_256x9.vhd Line: 53
+    Info (12023): Found entity 1: sincos_rom_256x9 File: /home/gomiten/Documents/VLSIclass/P3/sincos_rom_256x9.vhd Line: 43
 Info (12127): Elaborating entity "vga_top" for the top level hierarchy
-Info (12128): Elaborating entity "vga_sync" for hierarchy "vga_sync:U_SYNC" File: /home/sebas/Documents/VLSIclass/P3/vga_top.vhd Line: 106
-Info (12128): Elaborating entity "control" for hierarchy "control:U_CTRL" File: /home/sebas/Documents/VLSIclass/P3/vga_top.vhd Line: 120
-Info (12128): Elaborating entity "pixel_gen" for hierarchy "pixel_gen:U_PIXEL" File: /home/sebas/Documents/VLSIclass/P3/vga_top.vhd Line: 129
-Info (12128): Elaborating entity "sine_rom_640x9" for hierarchy "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM" File: /home/sebas/Documents/VLSIclass/P3/pixel_gen.vhd Line: 110
-Info (12128): Elaborating entity "altsyncram" for hierarchy "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component" File: /home/sebas/Documents/VLSIclass/P3/sine_rom_640x9.vhd Line: 60
-Info (12130): Elaborated megafunction instantiation "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component" File: /home/sebas/Documents/VLSIclass/P3/sine_rom_640x9.vhd Line: 60
-Info (12133): Instantiated megafunction "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component" with the following parameter: File: /home/sebas/Documents/VLSIclass/P3/sine_rom_640x9.vhd Line: 60
+Info (12128): Elaborating entity "vga_sync" for hierarchy "vga_sync:U_SYNC" File: /home/gomiten/Documents/VLSIclass/P3/vga_top.vhd Line: 92
+Info (12128): Elaborating entity "control" for hierarchy "control:U_CTRL" File: /home/gomiten/Documents/VLSIclass/P3/vga_top.vhd Line: 104
+Info (12128): Elaborating entity "pixel_gen" for hierarchy "pixel_gen:U_PIXEL" File: /home/gomiten/Documents/VLSIclass/P3/vga_top.vhd Line: 112
+Info (12128): Elaborating entity "sine_rom_640x9" for hierarchy "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM" File: /home/gomiten/Documents/VLSIclass/P3/pixel_gen.vhd Line: 73
+Info (12128): Elaborating entity "altsyncram" for hierarchy "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component" File: /home/gomiten/Documents/VLSIclass/P3/sine_rom_640x9.vhd Line: 60
+Info (12130): Elaborated megafunction instantiation "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component" File: /home/gomiten/Documents/VLSIclass/P3/sine_rom_640x9.vhd Line: 60
+Info (12133): Instantiated megafunction "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component" with the following parameter: File: /home/gomiten/Documents/VLSIclass/P3/sine_rom_640x9.vhd Line: 60
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -724,12 +724,12 @@ Info (12133): Instantiated megafunction "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_utq3.tdf
-    Info (12023): Found entity 1: altsyncram_utq3 File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_utq3" for hierarchy "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated" File: /home/sebas/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "sincos_rom_256x9" for hierarchy "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM" File: /home/sebas/Documents/VLSIclass/P3/pixel_gen.vhd Line: 123
-Info (12128): Elaborating entity "altsyncram" for hierarchy "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component" File: /home/sebas/Documents/VLSIclass/P3/sincos_rom_256x9.vhd Line: 60
-Info (12130): Elaborated megafunction instantiation "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component" File: /home/sebas/Documents/VLSIclass/P3/sincos_rom_256x9.vhd Line: 60
-Info (12133): Instantiated megafunction "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component" with the following parameter: File: /home/sebas/Documents/VLSIclass/P3/sincos_rom_256x9.vhd Line: 60
+    Info (12023): Found entity 1: altsyncram_utq3 File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_utq3" for hierarchy "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated" File: /home/gomiten/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "sincos_rom_256x9" for hierarchy "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM" File: /home/gomiten/Documents/VLSIclass/P3/pixel_gen.vhd Line: 81
+Info (12128): Elaborating entity "altsyncram" for hierarchy "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component" File: /home/gomiten/Documents/VLSIclass/P3/sincos_rom_256x9.vhd Line: 60
+Info (12130): Elaborated megafunction instantiation "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component" File: /home/gomiten/Documents/VLSIclass/P3/sincos_rom_256x9.vhd Line: 60
+Info (12133): Instantiated megafunction "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component" with the following parameter: File: /home/gomiten/Documents/VLSIclass/P3/sincos_rom_256x9.vhd Line: 60
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -781,41 +781,41 @@ Info (12133): Instantiated megafunction "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SI
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_b2r3.tdf
-    Info (12023): Found entity 1: altsyncram_b2r3 File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 28
-Info (12128): Elaborating entity "altsyncram_b2r3" for hierarchy "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated" File: /home/sebas/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+    Info (12023): Found entity 1: altsyncram_b2r3 File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_b2r3" for hierarchy "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated" File: /home/gomiten/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[0]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 35
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[1]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 58
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[2]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 81
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[3]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 104
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[4]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 127
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[5]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 150
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[6]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 173
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[7]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 196
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[8]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 219
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[8]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 219
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[7]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 196
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[6]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 173
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[5]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 150
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[4]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 127
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[3]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 104
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[2]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 81
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[1]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 58
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[0]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 35
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[8]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 219
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[1]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 58
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[0]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 35
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[7]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 196
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[6]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 173
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[5]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 150
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[4]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 127
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[3]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 104
-        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[2]" File: /home/sebas/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 81
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[0]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 35
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[1]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 58
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[2]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 81
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[3]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 104
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[4]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 127
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[5]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 150
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[6]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 173
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[7]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 196
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_COS_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[8]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 219
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[8]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 219
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[7]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 196
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[6]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 173
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[5]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 150
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[4]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 127
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[3]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 104
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[2]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 81
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[1]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 58
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sincos_rom_256x9:U_SIN_ROM|altsyncram:altsyncram_component|altsyncram_b2r3:auto_generated|q_a[0]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_b2r3.tdf Line: 35
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[8]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 219
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[1]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 58
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[0]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 35
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[7]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 196
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[6]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 173
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[5]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 150
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[4]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 127
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[3]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 104
+        Warning (14320): Synthesized away node "pixel_gen:U_PIXEL|sine_rom_640x9:U_SINE_ROM|altsyncram:altsyncram_component|altsyncram_utq3:auto_generated|q_a[2]" File: /home/gomiten/Documents/VLSIclass/P3/db/altsyncram_utq3.tdf Line: 81
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: /home/sebas/Documents/VLSIclass/P3/vga_top.vhd Line: 24
-    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: /home/sebas/Documents/VLSIclass/P3/vga_top.vhd Line: 24
-    Warning (13410): Pin "VGA_B[3]" is stuck at GND File: /home/sebas/Documents/VLSIclass/P3/vga_top.vhd Line: 24
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND File: /home/gomiten/Documents/VLSIclass/P3/vga_top.vhd Line: 20
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND File: /home/gomiten/Documents/VLSIclass/P3/vga_top.vhd Line: 20
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND File: /home/gomiten/Documents/VLSIclass/P3/vga_top.vhd Line: 20
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 29 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -825,9 +825,9 @@ Info (21057): Implemented 97 device resources after synthesis - the final resour
     Info (21059): Implemented 14 output pins
     Info (21061): Implemented 81 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 34 warnings
-    Info: Peak virtual memory: 429 megabytes
-    Info: Processing ended: Tue Nov  4 09:47:54 2025
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Peak virtual memory: 440 megabytes
+    Info: Processing ended: Wed Nov  5 12:09:49 2025
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:21
 
 

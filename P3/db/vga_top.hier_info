@@ -6,20 +6,20 @@ KEY[0] => control:U_CTRL.i_btn
 KEY[0] => vga_sync:U_SYNC.i_rst_n
 KEY[0] => control:U_CTRL.i_rst_n
 KEY[0] => s_clk_divider.ACLR
-VGA_HS << vga_sync:U_SYNC.o_hsync
-VGA_VS << vga_sync:U_SYNC.o_vsync
-VGA_R[0] << pixel_gen:U_PIXEL.o_vga_r[0]
-VGA_R[1] << pixel_gen:U_PIXEL.o_vga_r[1]
-VGA_R[2] << pixel_gen:U_PIXEL.o_vga_r[2]
-VGA_R[3] << pixel_gen:U_PIXEL.o_vga_r[3]
-VGA_G[0] << pixel_gen:U_PIXEL.o_vga_g[0]
-VGA_G[1] << pixel_gen:U_PIXEL.o_vga_g[1]
-VGA_G[2] << pixel_gen:U_PIXEL.o_vga_g[2]
-VGA_G[3] << pixel_gen:U_PIXEL.o_vga_g[3]
-VGA_B[0] << pixel_gen:U_PIXEL.o_vga_b[0]
-VGA_B[1] << pixel_gen:U_PIXEL.o_vga_b[1]
-VGA_B[2] << pixel_gen:U_PIXEL.o_vga_b[2]
-VGA_B[3] << pixel_gen:U_PIXEL.o_vga_b[3]
+VGA_HS <= vga_sync:U_SYNC.o_hsync
+VGA_VS <= vga_sync:U_SYNC.o_vsync
+VGA_R[0] <= pixel_gen:U_PIXEL.o_vga_r[0]
+VGA_R[1] <= pixel_gen:U_PIXEL.o_vga_r[1]
+VGA_R[2] <= pixel_gen:U_PIXEL.o_vga_r[2]
+VGA_R[3] <= pixel_gen:U_PIXEL.o_vga_r[3]
+VGA_G[0] <= pixel_gen:U_PIXEL.o_vga_g[0]
+VGA_G[1] <= pixel_gen:U_PIXEL.o_vga_g[1]
+VGA_G[2] <= pixel_gen:U_PIXEL.o_vga_g[2]
+VGA_G[3] <= pixel_gen:U_PIXEL.o_vga_g[3]
+VGA_B[0] <= pixel_gen:U_PIXEL.o_vga_b[0]
+VGA_B[1] <= pixel_gen:U_PIXEL.o_vga_b[1]
+VGA_B[2] <= pixel_gen:U_PIXEL.o_vga_b[2]
+VGA_B[3] <= pixel_gen:U_PIXEL.o_vga_b[3]
 
 
 |vga_top|vga_sync:U_SYNC

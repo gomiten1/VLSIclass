@@ -1,0 +1,66 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity fsm_control is
+    port (
+        i_clk         : in  std_logic; -- Reloj (25MHz)
+        i_rst_n       : in  std_logic;
+        i_btn_press   : in  std_logic; -- '1' si el botón está presionado (ya anti-rebote)
+        
+        -- Salidas de control
+        o_noise_en    : out std_logic; -- '1' para activar ruido
+        o_histo_mode  : out std_logic_vector(1 downto 0) -- 00=Off, 01=R, 10=G, 11=B
+    );
+end entity fsm_control;
+
+architecture rtl of fsm_control is
+    type t_state is (S_NORMAL, S_HISTO_R, S_HISTO_G, S_HISTO_B);
+    signal s_state      : t_state := S_NORMAL;
+    signal s_btn_prev   : std_logic := '0'; -- Para detectar flanco de subida
+    
+begin
+
+    -- Proceso 1: Lógica de transiciones de estado
+    process(i_clk, i_rst_n)
+    begin
+        if i_rst_n = '0' then
+            s_state <= S_NORMAL;
+            s_btn_prev <= '0';
+        elsif rising_edge(i_clk) then
+            -- Detectar un *flanco de subida* (presionar el botón)
+            if i_btn_press = '1' and s_btn_prev = '0' then
+                case s_state is
+                    when S_NORMAL  => s_state <= S_HISTO_R;
+                    when S_HISTO_R => s_state <= S_HISTO_G;
+                    when S_HISTO_G => s_state <= S_HISTO_B;
+                    when S_HISTO_B => s_state <= S_NORMAL;
+                end case;
+            end if;
+            
+            s_btn_prev <= i_btn_press; -- Guardar estado anterior
+        end if;
+    end process;
+
+    -- Proceso 2: Lógica de salidas (combinacional)
+    process(s_state)
+    begin
+        case s_state is
+            when S_NORMAL =>
+                o_noise_en <= '0';
+                o_histo_mode <= "00"; -- Off
+                
+            when S_HISTO_R =>
+                o_noise_en <= '1';
+                o_histo_mode <= "01"; -- Red
+            
+            when S_HISTO_G =>
+                o_noise_en <= '1';
+                o_histo_mode <= "10"; -- Green
+                
+            when S_HISTO_B =>
+                o_noise_en <= '1';
+                o_histo_mode <= "11"; -- Blue
+        end case;
+    end process;
+
+end architecture rtl;

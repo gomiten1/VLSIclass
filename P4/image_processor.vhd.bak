@@ -1,0 +1,245 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity image_processor is
+    port (
+        i_clk         : in  std_logic;
+        i_rst_n       : in  std_logic;
+        
+        -- Control desde FSM
+        i_noise_en    : in  std_logic;
+        i_histo_mode  : in  std_logic_vector(1 downto 0); -- 00=Off, 01=R, 10=G, 11=B
+        
+        -- Desde vga_sync
+        i_video_en_sync : in  std_logic; -- '1' en el área 640x480
+        i_vsync_pulse   : in  std_logic; -- Pulso al inicio de VSync
+        
+        -- Video IN (8-bit, desde image_reader)
+        i_rgb_r_8bit  : in  std_logic_vector(7 downto 0);
+        i_rgb_g_8bit  : in  std_logic_vector(7 downto 0);
+        i_rgb_b_8bit  : in  std_logic_vector(7 downto 0);
+        i_video_en    : in  std_logic; -- '1' en el área 320x240
+        
+        -- Video OUT (8-bit, al Overlay)
+        o_rgb_r_8bit  : out std_logic_vector(7 downto 0);
+        o_rgb_g_8bit  : out std_logic_vector(7 downto 0);
+        o_rgb_b_8bit  : out std_logic_vector(7 downto 0);
+        o_video_en    : out std_logic;
+        
+        -- Salida para el Overlay
+        o_histo_max_val : out std_logic_vector(7 downto 0) -- El *valor* (0-255) que más se repite
+    );
+end entity image_processor;
+
+architecture rtl of image_processor is
+    
+    -- Componentes
+    component gaussian_noise_gen is
+        port (
+            i_clk   : in  std_logic;
+            i_rst_n : in  std_logic;
+            o_noise : out signed(7 downto 0)
+        );
+    end component;
+    
+    component histogram_ram is
+        generic ( ADDR_WIDTH : integer := 8; DATA_WIDTH : integer := 16 );
+        port (
+            i_clk     : in  std_logic;
+            i_wr_addr : in  std_logic_vector(ADDR_WIDTH-1 downto 0);
+            i_wr_data : in  std_logic_vector(DATA_WIDTH-1 downto 0);
+            i_wr_en   : in  std_logic;
+            i_rd_addr : in  std_logic_vector(ADDR_WIDTH-1 downto 0);
+            o_rd_data : out std_logic_vector(DATA_WIDTH-1 downto 0)
+        );
+    end component;
+    
+    -- Señales de Ruido
+    signal s_noise_s8 : signed(7 downto 0);
+    signal s_r_sum : signed(8 downto 0);
+    signal s_g_sum : signed(8 downto 0);
+    signal s_b_sum : signed(8 downto 0);
+    
+    -- Píxel procesado (con ruido)
+    signal s_r_8bit_noisy : std_logic_vector(7 downto 0);
+    signal s_g_8bit_noisy : std_logic_vector(7 downto 0);
+    signal s_b_8bit_noisy : std_logic_vector(7 downto 0);
+
+    -- Señales de Histograma
+    type t_hist_state is (S_IDLE, S_CLEARING, S_ACCUMULATING, S_FIND_MAX);
+    signal s_hist_state : t_hist_state := S_IDLE;
+    
+    signal s_ram_wr_en   : std_logic;
+    signal s_ram_wr_addr : std_logic_vector(7 downto 0);
+    signal s_ram_wr_data : std_logic_vector(15 downto 0);
+    signal s_ram_rd_addr : std_logic_vector(7 downto 0);
+    signal s_ram_rd_data : std_logic_vector(15 downto 0);
+    
+    signal s_clear_addr  : unsigned(7 downto 0) := (others => '0');
+    signal s_find_addr   : unsigned(7 downto 0) := (others => '0');
+    signal s_max_count   : unsigned(15 downto 0) := (others => '0');
+    signal s_max_val     : unsigned(7 downto 0) := (others => '0'); -- El "bin" (0-255)
+    
+    signal s_histo_max_val_reg : std_logic_vector(7 downto 0) := (others => '0');
+
+begin
+    -- 1. Instanciar Generador de Ruido
+    U_NOISE_GEN : gaussian_noise_gen
+        port map ( i_clk => i_clk, i_rst_n => i_rst_n, o_noise => s_noise_s8 );
+
+    -- 2. Instanciar RAM de Histograma
+    U_HIST_RAM : histogram_ram
+        port map (
+            i_clk     => i_clk,
+            i_wr_addr => s_ram_wr_addr,
+            i_wr_data => s_ram_wr_data,
+            i_wr_en   => s_ram_wr_en,
+            i_rd_addr => s_ram_rd_addr,
+            o_rd_data => s_ram_rd_data
+        );
+
+    -- 3. Pipeline de Píxel (Ruido y Saturación)
+    process(i_clk, i_rst_n)
+    begin
+        if i_rst_n = '0' then
+            o_video_en <= '0';
+            s_r_8bit_noisy <= (others => '0');
+            s_g_8bit_noisy <= (others => '0');
+            s_b_8bit_noisy <= (others => '0');
+        elsif rising_edge(i_clk) then
+            
+            o_video_en <= i_video_en; -- Pasa el enable (área 320x240)
+
+            if i_video_en = '0' then
+                s_r_8bit_noisy <= (others => '0');
+                s_g_8bit_noisy <= (others => '0');
+                s_b_8bit_noisy <= (others => '0');
+            elsif i_noise_en = '1' then
+                -- RUIDO ACTIVO
+                s_r_sum <= signed('0' & i_rgb_r_8bit) + s_noise_s8;
+                s_g_sum <= signed('0' & i_rgb_g_8bit) + s_noise_s8;
+                s_b_sum <= signed('0' & i_rgb_b_8bit) + s_noise_s8;
+                
+                -- Saturar (Clamping)
+                if s_r_sum < 0 then s_r_8bit_noisy <= (others => '0');
+                elsif s_r_sum > 255 then s_r_8bit_noisy <= (others => '1');
+                else s_r_8bit_noisy <= std_logic_vector(s_r_sum(7 downto 0));
+                end if;
+                
+                if s_g_sum < 0 then s_g_8bit_noisy <= (others => '0');
+                elsif s_g_sum > 255 then s_g_8bit_noisy <= (others => '1');
+                else s_g_8bit_noisy <= std_logic_vector(s_g_sum(7 downto 0));
+                end if;
+                
+                if s_b_sum < 0 then s_b_8bit_noisy <= (others => '0');
+                elsif s_b_sum > 255 then s_b_8bit_noisy <= (others => '1');
+                else s_b_8bit_noisy <= std_logic_vector(s_b_sum(7 downto 0));
+                end if;
+            else
+                -- RUIDO INACTIVO (pass-through)
+                s_r_8bit_noisy <= i_rgb_r_8bit;
+                s_g_8bit_noisy <= i_rgb_g_8bit;
+                s_b_8bit_noisy <= i_rgb_b_8bit;
+            end if;
+        end if;
+    end process;
+    
+    -- Salidas de Píxel
+    o_rgb_r_8bit <= s_r_8bit_noisy;
+    o_rgb_g_8bit <= s_g_8bit_noisy;
+    o_rgb_b_8bit <= s_b_8bit_noisy;
+
+    -- 4. Lógica del Histograma (FSM interna)
+    process(i_clk, i_rst_n)
+        variable v_pixel_data : std_logic_vector(7 downto 0);
+    begin
+        if i_rst_n = '0' then
+            s_hist_state <= S_IDLE;
+            s_ram_wr_en <= '0';
+            s_clear_addr <= (others => '0');
+            s_find_addr <= (others => '0');
+            s_max_count <= (others => '0');
+            s_max_val <= (others => '0');
+            s_ram_rd_addr <= (others => '0');
+            s_histo_max_val_reg <= (others => '0');
+            
+        elsif rising_edge(i_clk) then
+            
+            -- Lógica por defecto (no escribir, no buscar)
+            s_ram_wr_en <= '0';
+            s_ram_rd_addr <= std_logic_vector(s_find_addr);
+            
+            -- Selección del canal a analizar
+            case i_histo_mode is
+                when "01" => v_pixel_data := s_r_8bit_noisy;
+                when "10" => v_pixel_data := s_g_8bit_noisy;
+                when "11" => v_pixel_data := s_b_8bit_noisy;
+                when others => v_pixel_data := (others => '0');
+            end case;
+
+            -- Máquina de estados del Histograma
+            case s_hist_state is
+                
+                when S_IDLE =>
+                    if i_histo_mode /= "00" then
+                        s_hist_state <= S_CLEARING;
+                        s_clear_addr <= (others => '0');
+                    end if;
+                    s_max_count <= (others => '0');
+                    s_max_val <= (others => '0');
+                
+                when S_CLEARING => -- Poner a cero los 256 bins
+                    s_ram_wr_en <= '1';
+                    s_ram_wr_addr <= std_logic_vector(s_clear_addr);
+                    s_ram_wr_data <= (others => '0');
+                    
+                    if s_clear_addr = 255 then
+                        s_hist_state <= S_ACCUMULATING;
+                    else
+                        s_clear_addr <= s_clear_addr + 1;
+                    end if;
+                
+                when S_ACCUMULATING => -- Acumular por 1 frame
+                    -- Usamos el pipeline R-W de la BRAM
+                    -- 1. Leer valor actual (basado en el píxel)
+                    s_ram_rd_addr <= v_pixel_data;
+                    
+                    -- 2. Escribir valor+1 (del píxel *anterior*)
+                    if i_video_en = '1' and i_video_en_sync = '1' then
+                        s_ram_wr_en <= '1';
+                        s_ram_wr_addr <= s_ram_rd_addr; -- (usa la dirección de lectura)
+                        s_ram_wr_data <= std_logic_vector(unsigned(s_ram_rd_data) + 1);
+                    end if;
+                    
+                    if i_vsync_pulse = '1' then
+                        s_hist_state <= S_FIND_MAX;
+                        s_find_addr <= (others => '0');
+                        s_max_count <= (others => '0');
+                        s_max_val <= (others => '0');
+                    elsif i_histo_mode = "00" then
+                        s_hist_state <= S_IDLE;
+                    end if;
+                    
+                when S_FIND_MAX => -- Buscar el máximo (toma 256 ciclos)
+                    s_ram_rd_addr <= std_logic_vector(s_find_addr);
+                    
+                    if unsigned(s_ram_rd_data) > s_max_count then
+                        s_max_count <= unsigned(s_ram_rd_data);
+                        s_max_val <= s_find_addr - 1; -- (por la latencia de 1 ciclo de la RAM)
+                    end if;
+                    
+                    if s_find_addr = 255 then
+                        s_hist_state <= S_IDLE;
+                        s_histo_max_val_reg <= std_logic_vector(s_max_val);
+                    else
+                        s_find_addr <= s_find_addr + 1;
+                    end if;
+
+            end case;
+        end if;
+    end process;
+    
+    o_histo_max_val <= s_histo_max_val_reg;
+
+end architecture rtl;
